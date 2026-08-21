@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masszőr Mentor — szakmai mentorprogram masszőröknek</title>
+<meta name="description" content="A Masszőr Mentor program: napi tippek appban, 2800+ fős szakmai közösség és mentortartalom masszőröknek — 30 év klinikai tapasztalatból.">
+<link rel="canonical" href="https://masszormentor.hu/">
+<meta property="og:title" content="Masszőr Mentor — szakmai mentorprogram masszőröknek">
+<meta property="og:description" content="Napi tippek, szakmai közösség és mentortartalom masszőröknek. 30 év tapasztalatból.">
+<meta property="og:url" content="https://masszormentor.hu/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --petrol:#1E5761;
+    --petrol-deep:#123A42;
+    --honey:#E8A64B;
+    --honey-soft:#F4D8AE;
+    --cream:#FBF8F2;
+    --card:#FFFFFF;
+    --ink:#1C2B2E;
+    --slate:#5C6F72;
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Karla',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+    --shadow:0 18px 44px rgba(18,58,66,.16);
+    --radius:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:20;background:rgba(251,248,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(30,87,97,.12)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--petrol);text-decoration:none}
+  .brand span{color:var(--honey)}
+  .nav-links{display:flex;gap:22px;align-items:center;font-size:14.5px;font-weight:500}
+  .nav-links a{text-decoration:none;color:var(--slate)}
+  .nav-links a:hover{color:var(--petrol)}
+  .nav a.cta-mini{
+    font-weight:700;font-size:14px;text-decoration:none;
+    background:var(--petrol);color:#fff;padding:10px 18px;border-radius:999px;
+    transition:background .2s ease}
+  .nav a.cta-mini:hover{background:var(--petrol-deep)}
+  @media (max-width:680px){.nav-links a:not(.cta-mini){display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{background:linear-gradient(160deg,var(--petrol-deep) 0%,var(--petrol) 70%);color:var(--cream);
+    padding:76px 0 92px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;
+    border-radius:50%;background:radial-gradient(circle,rgba(232,166,75,.22),transparent 65%)}
+  .hero-inner{position:relative;z-index:2;max-width:720px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--honey);margin-bottom:18px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,54px);line-height:1.12;margin-bottom:20px}
+  h1 em{font-style:normal;color:var(--honey)}
+  .lede{font-size:18px;color:rgba(251,248,242,.85);max-width:54ch;margin-bottom:32px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;font-weight:700;font-size:16px;text-decoration:none;
+    padding:15px 28px;border-radius:999px;transition:transform .18s ease,background .2s ease}
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:var(--honey);color:var(--petrol-deep)}
+  .btn-primary:hover{background:var(--honey-soft)}
+  .btn-ghost{border:1.5px solid rgba(251,248,242,.4);color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--honey);color:var(--honey)}
+  .hero-note{margin-top:18px;font-family:var(--mono);font-size:12.5px;color:rgba(251,248,242,.65)}
+
+  /* ---------- program pillars ---------- */
+  section{padding:84px 0}
+  .sec-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--petrol);margin-bottom:12px}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.6vw,36px);line-height:1.2;margin-bottom:16px}
+  .sec-lede{color:var(--slate);max-width:62ch;margin-bottom:44px}
+
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pillar{background:var(--card);border-radius:var(--radius);padding:32px 28px;border:1px solid rgba(30,87,97,.1);
+    display:flex;flex-direction:column}
+  .pillar .tag{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+    display:inline-block;padding:4px 11px;border-radius:999px;margin-bottom:16px;align-self:flex-start}
+  .tag-free{color:var(--petrol);background:rgba(30,87,97,.09)}
+  .tag-soon{color:#8A5A13;background:rgba(232,166,75,.18)}
+  .pillar h3{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--petrol);margin-bottom:10px}
+  .pillar p{font-size:15px;color:var(--slate);flex:1;margin-bottom:20px}
+  .pillar a.plink{font-weight:700;font-size:15px;color:var(--petrol);text-decoration:none}
+  .pillar a.plink:hover{color:var(--honey)}
+  .pillar.featured{background:linear-gradient(165deg,#FDF3E2,var(--honey-soft));border-color:rgba(232,166,75,.5)}
+
+  /* ---------- app strip ---------- */
+  .app-strip{background:var(--petrol);color:var(--cream);border-radius:28px;padding:52px 48px;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  .app-strip h2{color:var(--cream)}
+  .app-strip .sec-eyebrow{color:var(--honey)}
+  .app-strip p{color:rgba(251,248,242,.85);margin-bottom:24px}
+  .phone{width:min(250px,76vw);margin:0 auto;background:#0E2A30;border-radius:34px;padding:12px;
+    box-shadow:var(--shadow);border:1px solid rgba(251,248,242,.14)}
+  .phone-screen{background:var(--cream);border-radius:24px;overflow:hidden}
+  .p-head{background:var(--petrol-deep);color:var(--cream);padding:14px 16px;font-family:var(--serif);font-size:15px;font-weight:600}
+  .p-head small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--honey);margin-top:2px}
+  .p-tip{padding:15px 16px;border-bottom:1px solid rgba(30,87,97,.1)}
+  .p-cat{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--petrol);
+    background:rgba(30,87,97,.08);display:inline-block;padding:3px 8px;border-radius:999px;margin-bottom:7px}
+  .p-txt{font-size:12.5px;line-height:1.5;color:var(--ink)}
+  .p-more{padding:12px 16px;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--slate)}
+
+  /* ---------- community ---------- */
+  .community{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+  .community .num{font-family:var(--serif);font-size:60px;font-weight:600;color:var(--honey);line-height:1}
+  .community .num-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-top:6px}
+  .community-cta{text-align:center}
+  .community-cta .btn-primary{background:var(--petrol);color:#fff}
+  .community-cta .btn-primary:hover{background:var(--petrol-deep)}
+
+  /* ---------- about ---------- */
+  .about-band{background:var(--card);border-top:1px solid rgba(30,87,97,.1);border-bottom:1px solid rgba(30,87,97,.1)}
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+  .about-card{background:var(--cream);border-radius:var(--radius);padding:32px;border:1px solid rgba(30,87,97,.1)}
+  .about-card ul{list-style:none}
+  .about-card li{padding:10px 0;border-bottom:1px solid rgba(30,87,97,.08);font-size:15px}
+  .about-card li:last-child{border-bottom:none}
+  .about-card li::before{content:"— ";color:var(--honey);font-weight:700}
+
+  /* ---------- mentor / waitlist ---------- */
+  .mentor{background:linear-gradient(160deg,var(--petrol-deep),var(--petrol));color:var(--cream);
+    border-radius:28px;padding:60px 48px;text-align:center;position:relative;overflow:hidden}
+  .mentor::before{content:"";position:absolute;left:-120px;bottom:-120px;width:340px;height:340px;
+    border-radius:50%;background:radial-gradient(circle,rgba(232,166,75,.2),transparent 65%)}
+  .mentor>*{position:relative}
+  .mentor h2{color:var(--cream)}
+  .mentor .sec-eyebrow{color:var(--honey)}
+  .mentor p{color:rgba(251,248,242,.85);max-width:56ch;margin:0 auto 30px}
+
+  footer{background:var(--petrol-deep);color:rgba(251,248,242,.75);padding:40px 0;font-size:14px}
+  .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  footer a{color:var(--honey);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  :focus-visible{outline:3px solid var(--honey);outline-offset:2px;border-radius:4px}
+
+  @media (max-width:860px){
+    .pillars{grid-template-columns:1fr}
+    .app-strip,.community,.about-grid{grid-template-columns:1fr}
+    .hero{padding:56px 0 64px}
+    section{padding:60px 0}
+    .app-strip,.mentor{padding:40px 26px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">Masszőr<span>Mentor</span></a>
+    <nav class="nav-links">
+      <a href="#rolam">Ki vagyok én</a>
+      <a href="#program">A program</a>
+      <a href="#app">Az app</a>
+      <a href="#muhely">Műhely</a>
+      <a class="cta-mini" href="#mentor">Mentortartalom</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Masszőr Mentor program</p>
+    <h1>Neked is kellene egy kéz, <em>amely vezet?</em></h1>
+    <p class="lede">Vargyas Katalin vagyok, gyógymasszőr. Harminc éve masszírozok — klinikán, oktatóként és a saját praxisomban. A Masszőr Mentor programban ezt a tudást adom tovább.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#rolam">Megismerlek</a>
+      <a class="btn btn-ghost" href="#program">Megnézem a programot</a>
+    </div>
+    <p class="hero-note">30 év praxis · 2800+ fős közösség · 130+ tipp az appban</p>
+  </div>
+</div>
+
+<div class="about-band">
+<section id="rolam" style="padding:70px 0">
+  <div class="wrap about-grid">
+    <div>
+      <p class="sec-eyebrow">Ki vagyok én</p>
+      <h2>Vargyas Katalin</h2>
+      <p style="font-family:var(--mono);font-size:13px;color:var(--slate);margin:-8px 0 18px">gyógymasszőr · egészségfejlesztés MSc</p>
+      <p class="sec-lede" style="margin-bottom:12px">Amikor tanuló voltam, az oktatók megfogták a kezünket és az övékére téve együtt gyakoroltuk az adott fogást. Aztán cseréltünk, a kezünkre tették a kezüket, hogy érezzék, mennyire van meg az adott mozdulat.</p>
+      <p class="sec-lede" style="margin-bottom:12px"><strong>Itt van az én kezem. Harminc év gyógymasszőri munkája van benne.</strong></p>
+      <p class="sec-lede" style="margin-bottom:0">Szóval nyugodtan rábízhatod magad! Klinikai gyakorlat, oktatás, és a saját vállalkozásom felépítése. A tudásomat boldogan megosztom veled, hogy te is sikeres és hatékony masszőr legyél — akár évtizedeken keresztül. Nem sablonokat kapsz, hanem valódi tudást.</p>
+    </div>
+    <div class="about-card">
+      <ul>
+        <li>30 év klinikai gyógymasszőri tapasztalat</li>
+        <li>Egészségfejlesztés MSc (Szeged)</li>
+        <li>Egészségügyi adattudomány MSc (Semmelweis)</li>
+        <li>A Svédmasszázs Műhely alapítója</li>
+        <li>130+ szakmai tipp az appban — és folyamatosan bővül</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<section id="program">
+  <div class="wrap">
+    <p class="sec-eyebrow">A program három rétege</p>
+    <h2>Ott kapcsolódsz be, ahol most tartasz.</h2>
+    <p class="sec-lede">A Masszőr Mentor nem egy tanfolyam, hanem egy folyamatos szakmai kíséret. Az alapja ingyenes — az app és a közösség —, erre épül a mélyebb mentortartalom.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="tag tag-free">Ingyenes</span>
+        <h3>Az app</h3>
+        <p>130+ rövid, azonnal használható tipp: technika, testhasználat, anatómia, kommunikáció, praxis. Napi egy kis lépés — regisztráció és reklám nélkül.</p>
+        <a class="plink" href="#app">Megnézem az appot →</a>
+      </div>
+      <div class="pillar">
+        <span class="tag tag-free">Ingyenes</span>
+        <h3>A Műhely</h3>
+        <p>2800+ masszőr zárt Facebook-csoportja. Itt kérdezel, ha elakadsz, és itt látod, hogy mások hogyan oldják meg ugyanazt.</p>
+        <a class="plink" href="#muhely">Megnézem a közösséget →</a>
+      </div>
+      <div class="pillar featured">
+        <span class="tag tag-soon">Indul</span>
+        <h3>Mentortartalom</h3>
+        <p>Mélyebb, rendszerezett tartalom azoknak, akik nem csak tippeket akarnak, hanem fejlődési utat: esetek, teljes témakörök, közvetlen válaszok tőlem.</p>
+        <a class="plink" href="#mentor">Feliratkozom a várólistára →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="app">
+  <div class="wrap">
+    <div class="app-strip">
+      <div>
+        <p class="sec-eyebrow">Az ingyenes belépő</p>
+        <h2>Napi egy tipp, 30 év praxisból.</h2>
+        <p>A Masszőr Mentor app a program alapja: rövid, gyakorlati tippek, amiket két vendég között is elolvasol. Androidra és böngészőbe, ingyen.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=hu.masszormentor.app">Letöltöm Androidra</a>
+          <a class="btn btn-ghost" href="https://masszormentor.app">Megnyitom böngészőben</a>
+        </div>
+      </div>
+      <div class="phone" aria-hidden="true">
+        <div class="phone-screen">
+          <div class="p-head">Masszőr Mentor<small>Mai tipp</small></div>
+          <div class="p-tip">
+            <span class="p-cat">Testhasználat</span>
+            <p class="p-txt">Nem a kezed ereje dolgozik, hanem a testsúlyod. Ha a válladból nyomsz, a saját praxisod rövidíted meg.</p>
+          </div>
+          <div class="p-tip">
+            <span class="p-cat">Kommunikáció</span>
+            <p class="p-txt">Ha a vendég elalszik, az nem sértés. A legőszintébb visszajelzés, hogy biztonságban érzi magát.</p>
+          </div>
+          <div class="p-more">+ 130 további tipp az appban</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="muhely">
+  <div class="wrap community">
+    <div>
+      <p class="sec-eyebrow">Svédmasszázs Műhely</p>
+      <h2>Nem kell egyedül csinálnod.</h2>
+      <p class="sec-lede" style="margin-bottom:0">A Műhely a program közösségi tere: zárt Facebook-csoport, ahol masszőrök kérdeznek, válaszolnak és tapasztalatot cserélnek — kezdők és több évtizedes praxissal dolgozók egyaránt. Ingyenes, és az marad.</p>
+    </div>
+    <div class="community-cta">
+      <div class="num">2800+</div>
+      <div class="num-label">masszőr a közösségben</div>
+      <p style="margin-top:22px"><a class="btn btn-primary" href="https://facebook.com/groups/svedmasszormuhely">Csatlakozom a csoporthoz</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="mentor">
+  <div class="wrap">
+    <div class="mentor">
+      <p class="sec-eyebrow">Mentortartalom — indul</p>
+      <h2>Havonta egy levél. Nem hetente — mert havonta egyszer van mit mondanom.</h2>
+      <p>A havi levélben megosztom a legújabb ismereteket, és a levél olvasói tudják meg először, mikor és mivel indul a program fizetős rétege: rendszerezett, mélyebb mentortartalom, teljes témakörök, közvetlen válaszok tőlem. Ők szólhatnak bele abba is, mi kerüljön bele.</p>
+      <a class="btn btn-primary" href="https://forms.gle/PLACEHOLDER">Kérem a havi levelet</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Masszőr Mentor · Vargyas Katalin</div>
+    <div>
+      <a href="https://play.google.com/store/apps/details?id=hu.masszormentor.app">Google Play</a> ·
+      <a href="https://masszormentor.app">Webes app</a> ·
+      <a href="https://facebook.com/groups/svedmasszormuhely">Műhely</a> ·
+      <a href="adatkezeles.html">Adatkezelés</a>
+    </div>
+  </div>
+</footer>
+
+<!-- GoatCounter -->
+<script data-goatcounter="https://masszormentor.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
